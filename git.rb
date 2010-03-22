@@ -11,5 +11,8 @@ config/database.yml
 db/*.sqlite3
 vendor/rails
 END
- 
-git :add => ".", :commit => "-m 'initial commit'"
+
+# if added in one line as git :add => "", :commit => ""
+# commit is executed first for whatever reason
+git :add => "."
+git :commit => "-m 'initial commit'"
