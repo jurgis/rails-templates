@@ -1,0 +1,10 @@
+h2. Rails templates
+
++base.rb+
+Base template with
+* git
+* *to be continued ...*
+
+<pre><code>
+  $ rails -m http://github.com/jurgis/rails-templates/raw/master/base.rb
+</code></pre>
