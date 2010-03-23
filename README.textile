@@ -1,9 +1,15 @@
 h2. Rails templates
 
 +base.rb+
-Base template with
-* git
-* *to be continued ...*
+Base template
+* deletes unused files
+* adds used gems and plugins
+# database
+# will-paginate
+# openid
+# rspec, webrat, cucumber
+
+* initializes git
 
 <pre><code>
   $ rails -m http://github.com/jurgis/rails-templates/raw/master/base.rb
