@@ -12,5 +12,5 @@ Base template
 * initializes git
 
 <pre><code>
-  $ rails -m http://github.com/jurgis/rails-templates/raw/master/base.rb
+  $ rails <projectname> -m http://github.com/jurgis/rails-templates/raw/master/base.rb
 </code></pre>

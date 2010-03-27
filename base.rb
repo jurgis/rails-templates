@@ -17,34 +17,36 @@ git :submodule => "init"
 gem 'postgres'
 gem 'sqlite3-ruby', :lib => 'sqlite3'
 
-gem 'mislav-will_paginate', :lib => 'will-paginate', :source => 'http://gems.github.com'
-gem 'authlogic'
-gem 'authlogic-oid', :lib => 'authlogic_openid'
-gem 'ruby-openid', :lib => 'openid'
+gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
 gem 'ambethia-smtp-tls', :lib => 'smtp-tls', :source => 'http://gems.github.com'
 
+# gems are added in reverse order!
+gem 'rack-openid', :version => '>=0.2.1', :lib => 'rack/openid' # hack for open_id_authentication plugin not to break it
+gem 'authlogic-oid', :lib => 'authlogic_openid'
+gem 'authlogic'
+gem 'ruby-openid', :lib => 'openid'
+
 # gems in test env
-gem 'rspec', :lib => false, :version => '>=1.2.6', :environment => :test
-gem 'rspec-rails', :lib => false, :version => '>=1.2.6', :environment => :test
-gem 'webrat', :lib => false, :version => '>=0.4.4', :environment => :test
-gem 'cucumber', :lib => false, :version => '>=0.3.2', :environment => :test
-gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :environment => :test
+gem 'rspec-rails', :lib => false, :version => '>=1.2.6', :env => :test
+gem 'rspec', :lib => false, :version => '>=1.2.6', :env => :test
+gem 'webrat', :lib => false, :version => '>=0.4.4', :env => :test
+gem 'cucumber', :lib => false, :version => '>=0.6.3', :env => :test
+gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :env => :test
 
 rake 'gems:install', :sudo => true
-rake 'gems:install', :environment => :test, :sudo => true 
+rake 'gems:install', :env => :test, :sudo => true 
 
 
 # Add plugins
 plugin 'open_id_authentication', :git => 'git://github.com/rails/open_id_authentication.git'
 
-#TODO: NOT WORKING YET!!!
+# does not exist any more
 # rake 'open_id_authentication:db:create'
 
 
-#TODO: NOT WORKING YET!!!
 # Run required generators
-# generate 'rspec', :environment => :test
-# generate 'cucumber', :environment => :test
+generate 'rspec', :environment => :test
+generate 'cucumber', :environment => :test
 
 
 # Run required rake tasks
