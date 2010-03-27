@@ -12,5 +12,9 @@ Base template
 * initializes git
 
 <pre><code>
-  $ rails <projectname> -m http://github.com/jurgis/rails-templates/raw/master/base.rb
+  $ rails <application name> -m http://github.com/jurgis/rails-templates/raw/master/base.rb
+    or
+  $ railsapp <template> <application name> [more rails options]
 </code></pre>
+
+railsapp bash script could be copied into users bin directory ~/bin
