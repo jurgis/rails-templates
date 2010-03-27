@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" = "" -o "$2" = "" ]; then
+  echo 'Usage: railsapp <template> <application name> [more rails options]'
+  echo 'Available templates:'
+  echo '* base'
+  exit 1
+fi
+
+template=$1
+appname=$2
+shift 2
+
+rails $appname -m http://github.com/jurgis/rails-templates/raw/master/$template.rb $@
