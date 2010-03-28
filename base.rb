@@ -27,11 +27,14 @@ gem 'authlogic'
 gem 'ruby-openid', :lib => 'openid'
 
 # gems in test env
-gem 'rspec-rails', :lib => false, :version => '>=1.2.6', :env => :test
-gem 'rspec', :lib => false, :version => '>=1.2.6', :env => :test
-gem 'webrat', :lib => false, :version => '>=0.4.4', :env => :test
+gem 'rspec-rails', :lib => false, :version => '>=1.3.2', :env => :test
+gem 'rspec', :lib => false, :version => '>=1.3.0', :env => :test
+gem 'webrat', :lib => false, :version => '>=0.7.0', :env => :test
+# required by cucumber (should be defined as depenency in cucumber or cucumber-rails)
+gem 'database_cleaner', :lib => false, :version => ">= 0.5.0", :env => :test
+gem 'cucumber-rails', :lib => false, :version => '>=0.3.0', :env => :test
 gem 'cucumber', :lib => false, :version => '>=0.6.3', :env => :test
-gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :env => :test
+gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :version => '>=1.2.2',  :source => 'http://gems.github.com', :env => :test
 
 rake 'gems:install', :sudo => true
 rake 'gems:install', :env => :test, :sudo => true 
@@ -45,8 +48,8 @@ plugin 'open_id_authentication', :git => 'git://github.com/rails/open_id_authent
 
 
 # Run required generators
-generate 'rspec', :environment => :test
-generate 'cucumber', :environment => :test
+generate 'rspec'
+generate 'cucumber', "--webrat"
 
 
 # Run required rake tasks
